@@ -4,7 +4,7 @@
 <%
 
 String id ="test1";
-String pw = "1111";
+String pw = "1112";
 
  boolean check = MemberDAO.getInstance().isLoginPass(id, pw);
 

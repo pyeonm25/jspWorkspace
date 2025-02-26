@@ -29,7 +29,8 @@ public class MemberDAO {
 	private void getConnection() {
 		String database = "mvc1db";
 		
-		String url = "jdbc:mysql://localhost:3306/" + database + "?charaterEncoding=UTF-8&serverTimezone=UTC";
+		String url = "jdbc:mysql://localhost:3306/" + database + 
+				"?charaterEncoding=UTF-8&serverTimezone=UTC&useSSL=false";
 		String user = "root";
 		String password = "1234";
 		try {
@@ -86,7 +87,9 @@ public class MemberDAO {
 			
 			// 쿼리문 
 			rs = ps.executeQuery(); // 
-			num = rs.getInt("num");
+			if(rs.next()) { // rs.next() 실행 쿼리 row 한줄 읽어옴
+				num = rs.getInt("num");
+			}
 			
 			
 		} catch (SQLException e) {
