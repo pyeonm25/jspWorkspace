@@ -67,10 +67,37 @@ public class MemberDAO {
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}finally {
+			dbClose();
 		}
 		
 		return list;
 	}
+	
+	public boolean isLoginPass(String id, String pass) {
+		String sql="select num from member where id=? and pass=?"; // ? 시작 1
+		int num =0;
+		try {
+			getConnection(); // db 객체 생성 
+			ps = conn.prepareStatement(sql); // 쿼리객체 
+			// 미완성 쿼리 완성 
+			ps.setString(1, id);
+			ps.setString(2, pass);
+			
+			// 쿼리문 
+			rs = ps.executeQuery(); // 
+			num = rs.getInt("num");
+			
+			
+		} catch (SQLException e) {
+			System.out.println(" id pass 조회 실패");
+			e.printStackTrace();
+		}finally {
+			dbClose();
+		}
+		return num!=0;
+	}
+	
 
 	private void dbClose() {
 		try {

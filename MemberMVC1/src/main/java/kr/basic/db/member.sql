@@ -28,4 +28,8 @@ insert into member(id,pass,name,age,email,phone) values('test7','7777','테스�
 
 select * from member;
 
+-- test1 1111
+
+select * from member where id='test1' and pass='1111';
+
 
