@@ -101,7 +101,35 @@ public class MemberDAO {
 		return num!=0;
 	}
 	
-
+// select => 테이블 수정 x , 결과테이블 나온다 
+// insert, update , delete => 테이블 수정 명령문 
+	public int insertAMember(String id,String pw,String name,int age,String email,String phone) {
+		String sql="insert into member(id,pass,name,age,email,phone) values(?,?,?,?,?,?)";
+		int rowCnt =0;
+		try {
+			getConnection(); // db 객체 생성 
+			ps = conn.prepareStatement(sql); // 쿼리객체 
+			
+			// ? 있으면 항상 채워준다
+			ps.setString(1, id);
+			ps.setString(2, pw);
+			ps.setString(3, name);
+			ps.setInt(4, age);
+			ps.setString(5, email);
+			ps.setString(6, phone);
+			
+			rowCnt = ps.executeUpdate(); // insert , update, delete => 영향을 끼친 row 갯수 int 반환
+			
+		} catch (SQLException e) {
+			System.out.println(" 회원 추가 실패");
+			e.printStackTrace();
+		}finally {
+			dbClose();
+		}
+		return rowCnt;
+	}
+	
+	
 	private void dbClose() {
 		try {
 			if (rs != null)
