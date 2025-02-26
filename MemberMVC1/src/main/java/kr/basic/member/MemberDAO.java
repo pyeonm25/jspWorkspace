@@ -28,6 +28,7 @@ public class MemberDAO {
 
 	private void getConnection() {
 		String database = "mvc1db";
+		
 		String url = "jdbc:mysql://localhost:3306/" + database + "?charaterEncoding=UTF-8&serverTimezone=UTC";
 		String user = "root";
 		String password = "1234";
@@ -49,9 +50,19 @@ public class MemberDAO {
 			getConnection(); // db 객체 생성 
 			ps= conn.prepareStatement(sql); // 쿼리 명령문 넣어주기 
 			rs = ps.executeQuery(); // select 문은 resultSet 객체를 리턴한다 
-			
+			// rs.next() => 다음줄(row)이 없다면 false 있으면 true 
 			while(rs.next()) {
+				int num = rs.getInt("num");
+				String id = rs.getString("id");
+				String pass = rs.getString("pass");
+				String name = rs.getString("name");
+				int age = rs.getInt("age");
+				String emil = rs.getString("email");
+				String phone = rs.getString("phone");
 				
+				Member member = new Member(num, id, pass, name, age, emil, phone);
+				list.add(member);
+				System.out.println(member);
 			}
 			
 		} catch (SQLException e) {
