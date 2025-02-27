@@ -13,10 +13,8 @@ public class MemberDeleteController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 		
 		String ctx = request.getContextPath();
-		
 		response.sendRedirect(ctx+"/memberList.do");
 		
 	}
