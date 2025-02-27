@@ -34,7 +34,7 @@ public class MemberDAO {
 		String user = "root";
 		String password = "1234";
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(url, user, password); // mysql db 객체 생성
 			System.out.println(conn);
 		} catch (Exception e) {
@@ -46,6 +46,21 @@ public class MemberDAO {
 	public int updateAMemberByNum(int num, int age, String email, String phone) {
 		String sql="update member set age=?,email=?,phone=? where num=?";
 		int rowCnt =0;
+		try {
+			getConnection();
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, age);
+			ps.setString(2, email);
+			ps.setString(3, phone);
+			ps.setInt(4, num);
+			
+			rowCnt = ps.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println(" update 문 실행 실패");
+			e.printStackTrace();
+		}finally {
+			dbClose();
+		}
 		
 		return rowCnt;
 	}

@@ -13,6 +13,8 @@ create table member(
     unique key(id)
 );
 
+truncate table member;
+select * from member;
 
 desc member;
 

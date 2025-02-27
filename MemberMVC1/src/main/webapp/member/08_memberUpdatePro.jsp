@@ -8,8 +8,7 @@ int age = 20;
 String email="test@test444.com";
 String phone="010-0000-1342";
 
-MemberDAO.getInstance();
-int cnt = 0;
+int cnt = MemberDAO.getInstance().updateAMemberByNum(num, age, email, phone);
 if(cnt == 1){
 %>
 
