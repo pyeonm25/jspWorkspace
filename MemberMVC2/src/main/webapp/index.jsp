@@ -4,4 +4,6 @@
 
 <h3> 메인 홈 </h3>
 
+  <a href='${ctx}/memberDelete.do'>회원 삭제 do 이동 </a>
+
 <%@ include file="./part/footer.jsp" %>
