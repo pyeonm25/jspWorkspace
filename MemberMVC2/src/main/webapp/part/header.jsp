@@ -22,8 +22,7 @@
             <a href='${ctx}/member/memberLogin.jsp'> 로그인</a>
            	</c:if>
            	
-           	 <c:if test="${log ne null}" >
-            <a href='05_memberContent.jsp?num=<%=(int)session.getAttribute("log") %>'> 내정보</a>
+           	 <c:if test="${log eq null}" >
             <a href='${ctx}/memberContent.do?num=${log}'> 내정보</a>
             <a href='${ctx}/memberLogout.do'> 로그아웃</a>
             </c:if>
