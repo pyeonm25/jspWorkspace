@@ -34,7 +34,7 @@ public class MemberDAO {
 		String user = "root";
 		String password = "1234";
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver"); // mysql 8.0 버전 주소 수정! 
 			conn = DriverManager.getConnection(url, user, password); // mysql db 객체 생성
 			System.out.println(conn);
 		} catch (Exception e) {
