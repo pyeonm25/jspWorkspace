@@ -43,6 +43,12 @@ public class MemberDAO {
 		}
 
 	}
+	public int updateAMemberByNum(int num, int age, String email, String phone) {
+		String sql="update member set age=?,email=?,phone=? where num=?";
+		int rowCnt =0;
+		
+		return rowCnt;
+	}
 	
 	public ArrayList<Member> getMemberList(){
 		ArrayList<Member> list = new ArrayList<Member>();

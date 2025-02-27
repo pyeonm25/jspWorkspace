@@ -31,5 +31,7 @@ select * from member;
 -- test1 1111
 
 select * from member where id='test1' and pass='1111';
+-- 번호가 3인 사람의 age 와 email, phone 번호 수정 
+update member set age=12,email='test',phone='010-0000-0000' where num=3; 
 
 
