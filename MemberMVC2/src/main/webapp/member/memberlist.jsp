@@ -3,5 +3,6 @@
 
 <%@ include file="../part/header.jsp" %>
 
+<h3> ${ list } </h3>
 
 <%@ include file="../part/footer.jsp" %>

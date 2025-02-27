@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>mvc2 </title>
-<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<link rel="stylesheet" type="text/css" href="${ctx}/css/style.css" />
 </head>
 <body>
 
@@ -25,7 +25,7 @@
            	 <c:if test="${log ne null}" >
             <a href='05_memberContent.jsp?num=<%=(int)session.getAttribute("log") %>'> 내정보</a>
             <a href='${ctx}/memberContent.do?num=${log}'> 내정보</a>
-            <a href='03_memberLogoutPro.jsp'> 로그아웃</a>
+            <a href='${ctx}/memberLogout.do'> 로그아웃</a>
             </c:if>
    
         </div>
