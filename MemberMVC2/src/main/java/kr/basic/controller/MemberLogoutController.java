@@ -5,6 +5,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -20,6 +22,9 @@ public class MemberLogoutController extends HttpServlet {
 		String ctx = request.getContextPath(); // 프로젝트 이름 
 		//PrintWriter html 문서 바디에 값을 넣어준은 객체 
 		PrintWriter writer = response.getWriter();
+		
+		HttpSession session = request.getSession();
+		session.invalidate();
 		
 		String msg = "<script> alert('%s'); location.href='%s/%s' </script>";
 		

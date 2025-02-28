@@ -33,7 +33,7 @@ public class MemberLoginController extends HttpServlet {
 			   writer.println("<script>alert('" + id + "님이 로그인하셨습니다'); location.href='"+ctx+"/memberList.do';</script>");
 			  // String.format(msg, "로그인 성공" ,ctx , "/memberList.do");
 		   }else {
-				writer.println("<script>alert('로그인 실패'); location.href='member/memberLogin.jsp;</script>");
+				writer.println("<script>alert('로그인 실패'); location.href='member/memberLogin.jsp';</script>");
 			 //  String.format(msg, "로그인 실패" ,"/member" , "/memberLogin.jsp");
 		   }
 		
