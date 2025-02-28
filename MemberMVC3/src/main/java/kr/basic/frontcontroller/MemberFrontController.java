@@ -1,5 +1,6 @@
 package kr.basic.frontcontroller;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -27,7 +28,18 @@ public class MemberFrontController extends HttpServlet {
 		HandlerMapping mapping = new HandlerMapping(); // 우리 url-pattern 매핑값
 		controller=mapping.getController(command); // new MemberListController() 주소값 
 		
-		controller.requestHandler(request, response);
+		String nextPage = controller.requestHandler(request, response);
+		
+		if(nextPage != null) {
+			if(nextPage.indexOf("redirect:") != -1) {
+				response.sendRedirect(nextPage.split(":")[1]); // ctx + "/memberList.do"
+			}else {
+				RequestDispatcher rd = request.getRequestDispatcher( ViewResolver.makeView(nextPage));
+				rd.forward(request, response);
+				
+			}
+		}
+		
 	}
 
 }

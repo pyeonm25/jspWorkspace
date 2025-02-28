@@ -17,8 +17,8 @@
 
 				<a href='${ctx}/memberList.do'>회원 목록</a>
 				<c:if test="${log eq null}">
-					<a href="${ctx}/member/memberInsert.jsp">회원 가입</a>
-                    <a href="${ctx}/member/memberLogin.jsp">로그인</a>
+					<a href="${ctx}/memberInsert.do">회원 가입</a>
+                    <a href="${ctx}/memberLogin.do">로그인</a>
 				</c:if>
 				<c:if test="${log ne null}">
 					<a href='${ctx}/memberContent.do?num=${log}'> 내정보</a>

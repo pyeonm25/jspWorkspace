@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import kr.basic.controller.Controller;
 import kr.basic.controller.MemberListController;
+import kr.basic.controller.MemberLoginController;
 
 //우리가 web.xml에게 *.do 모든 페이지 위임 
 // 직접 url 맵핑을 시켜주기 
@@ -15,6 +16,7 @@ public class HandlerMapping {
 	public HandlerMapping() {
 		mappings = new HashMap<String,Controller>();
 		mappings.put("/memberList.do", new MemberListController());
+		mappings.put("/memberLogin.do", new MemberLoginController());
 		
 	}
 	public Controller getController(String key) {
