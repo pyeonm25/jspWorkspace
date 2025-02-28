@@ -15,11 +15,9 @@ import kr.basic.model.MemberDAO;
 //2. 객체바인딩
 //3. 페이지이동 => 리턴값 1.redirect   2.foward
 public class MemberListController implements Controller {
-
 	@Override
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
 		System.out.println("memberListContoller 실행~~");
 		//1. model 연동
 		ArrayList<Member> list=MemberDAO.getInstance().memberList();	
