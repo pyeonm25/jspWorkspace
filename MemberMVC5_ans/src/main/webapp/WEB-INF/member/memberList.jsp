@@ -42,7 +42,7 @@
     	      </td>
     	    <td><input type="button" value="삭제" class="btn-del"  onclick="deleteFn('${vo.id}','${vo.num}')"
     	      	    <c:if test="${loginId!=vo.id and loginId!='admin'}"> 
-    	              disabled="disabled"
+    	              disabled
           	      </c:if>/></td>
     	  </tr>    	 
   </c:forEach>

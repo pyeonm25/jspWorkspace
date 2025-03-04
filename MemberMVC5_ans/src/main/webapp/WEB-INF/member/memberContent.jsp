@@ -53,13 +53,16 @@
   </tr> 
   <tr>
     <td colspan="2" align="center">
-       <input type="button" value="사진 업로드" class='btn-submit' id="uploadBtn"  <c:if test="${loginId!=vo.id and loginId!='admin'}"> 
+       <input type="button" value="사진 업로드" class='btn-submit' id="uploadBtn"
+         <c:if test="${loginId!=vo.id and loginId!='admin'}"> 
     	              disabled="disabled"
           	      </c:if>/> 
-       <input type="submit" value="수정하기" class='btn-submit' <c:if test="${loginId!=vo.id and loginId!='admin'}"> 
+       <input type="submit" value="수정하기" class='btn-submit'
+        <c:if test="${loginId!=vo.id and loginId!='admin'}"> 
     	              disabled="disabled"
           	      </c:if>/>
-       <input type="button" value="사진 삭제" class='btn-cancel' id="deleteBtn"   <c:if test="${loginId!=vo.id and loginId!='admin'}"> 
+       <input type="button" value="사진 삭제" class='btn-cancel' id="deleteBtn"   
+       <c:if test="${loginId!=vo.id and loginId!='admin'}"> 
     	              disabled="disabled"
           	      </c:if>/> 
     </td>

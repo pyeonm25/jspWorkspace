@@ -26,13 +26,14 @@ public class HandlerMapping {
 		mappings.put("/memberLogin.do", new MemberLoginController());
 		mappings.put("/memberLogout.do", new MemberLogoutController());
 		mappings.put("/vaildIdAjax.do", new VaildIdAjaxController());
+		mappings.put("/memberInsert.do", new MemberInsertController());
 
 		// file upload
 		mappings.put("/memberDelete.do", new MemberDeleteController());
 		mappings.put("/memberAdd.do", new MemberAddController());
 		mappings.put("/memberUploadImg.do", new MemberUploadImgController());
 		mappings.put("/memberDeleteImg.do", new MemberDeleteImgController());
-		mappings.put("/memberInsert.do", new MemberInsertController());
+	
 	}
 
 	public Controller getController(String key) {
