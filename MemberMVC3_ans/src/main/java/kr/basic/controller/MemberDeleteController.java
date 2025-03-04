@@ -5,24 +5,22 @@ import java.io.IOException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import kr.basic.model.MemberDAO;
 
-public class MemberLoginController implements Controller {
+public class MemberDeleteController implements Controller{
+
 	@Override
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		System.out.println("memberLoginController 실행~~");
+		String ctx=request.getContextPath(); //MemberMVC3
+		int cnt=MemberDAO.getInstance().memberDelete(request.getParameter("id"));
+		
+		if(cnt>0) {
+			return "redirect:"+ctx+"/memberList.do";
 	
-		String ctx = request.getContextPath();
-		
-		if(request.getParameter("id") == null) {
-		  return "memberLogin";
+		}else {
+			throw new ServletException("not delete");	
 		}
-		
-		// 로그인 처리 ~~ 
-		String id = request.getParameter("id");
-		
-		return "redirect:"+ctx+"/memberList.do";
 	}
-
 }

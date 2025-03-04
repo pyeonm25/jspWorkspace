@@ -1,0 +1,168 @@
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:300,400,500,700,700&display=swap');
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+/* reset CSS */
+*{box-sizing: border-box;}
+a{ text-decoration: none; color: #222;}
+h1,h2,h3,h4,h5,h6{ margin: 0; font-weight: normal;}
+button{ cursor: pointer; outline: none; border: none;}
+input,textarea,select{
+  outline: none;
+}
+
+html, body {
+   width: 100%;
+   height: 100%;
+   margin: 0;
+   padding: 0;
+} 
+body{
+  font-family: 'Noto Sans KR' , 'Montserrat',sans-serif; 
+}
+
+header{
+	background: pink;
+	opacity: 0.8;
+	font-size:1.5em;
+	font-weight: 600;
+  height: 10vh;
+  width: 100%;
+
+}
+.inner{
+  width: 1300px;
+  text-align: center;
+  margin: auto;
+
+}
+.gnb {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+.gnb a{
+  height: 100%;
+  margin: 10px;
+  position: relative;
+}
+.gnb a:last-child{
+  margin-right: 0;
+}
+.gnb a::after{
+  content: '';
+  position:absolute;
+  bottom: -5px;
+  /* left: 0; */
+  left: 50%;
+  height: 3px;
+  width: 100%;
+  width: 0;
+  background-color: #222;
+  opacity: 0.5;
+  transform: translateX(-50%);
+  transition: 0.3s;
+}
+.gnb a:hover::after{
+  width: 100%;
+}
+
+h1{
+  margin: 20px 0;
+}
+
+.left{
+	text-align: left;
+}
+button{
+	background-color: #eee;
+}
+
+table{
+  width: 70%;
+
+  margin: auto;
+
+}
+
+
+table th{
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+tr a{
+  font-weight: 600;
+
+}
+tr a:hover{
+  text-decoration: underline;
+}
+tr .btn-del{
+  padding: 10px 20px;
+}
+tr .btn-del:hover{
+  background-color: crimson;
+  color: white;
+}
+
+form{
+  margin: auto;
+  width: 50%;
+  /* border: 1px solid black; */
+}
+
+form table{
+  width: 80%;
+  margin: 20px;
+  margin: auto;
+}
+form table td{
+  /* border: 1px solid black; */
+}
+form input{
+  width: 100%;
+  padding: 10px ;
+}
+.btn-submit{
+  margin-top: 10px;
+  width: 40%;
+  height: 50px;
+  font-size: 1.2em;
+}
+.btn-group{
+  text-align: right;
+}
+
+.btn-submit:hover{
+  background-color: royalblue;
+  color: #eee;
+}
+.btn-cancel{
+  margin-top: 10px;
+  width: 40%;
+  height: 50px;
+  font-size: 1.2em;
+}
+input{
+	outline: solid 1px #eee;
+
+}
+
+.btn-cancel:hover{
+  background-color: crimson;
+  color: #eee;
+}
+
+footer{
+  position: fixed;
+  width: 100%;
+  bottom: 0vh;
+	background: pink;
+	opacity: 0.8;
+
+  height: 10vh;
+
+}
