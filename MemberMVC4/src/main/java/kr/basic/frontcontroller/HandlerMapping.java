@@ -18,7 +18,7 @@ public class HandlerMapping {
 	  mappings.put("/memberDelete.do", new MemberDeleteController());
 	  mappings.put("/memberLogin.do", new memberLoginController());
 	  mappings.put("/memberLogout.do", new memberLogoutController());
-	  mappings.put("/validateAjax.do" , new ValidateAjaxController());
+	  mappings.put("/vaildIdAjax.do" , new ValidateAjaxController());
   }
   public Controller getController(String key) { // key=>/memberList.do
 	  return mappings.get(key);
