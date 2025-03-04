@@ -34,15 +34,15 @@ checkIdButton.addEventListener('click', async () => {
     }
 
     try {
-        const response = await fetch('vaildIdAjax.do', {
+        const response = await fetch('vaildIdAjax.do', {          // request 객체 
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
             },
-            body: new URLSearchParams({ id }).toString(),
+            body: new URLSearchParams({ id  }).toString(),  // {"id" : id}   => request.getParameter 
         });
 
-        if (!response.ok) {
+        if (!response.ok) {  // response.ok == 200 
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
