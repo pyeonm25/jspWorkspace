@@ -34,7 +34,7 @@
   </tr>
   <tr>
     <td colspan="2" class="btn-group">
-          <button class="btn-submit"> 가입 </button>
+          <button class="btn-submit" onclick="validCheck(form)"> 가입 </button>
           <button class="btn-cancel"> 취소 </button>
     </td>
   </tr>
