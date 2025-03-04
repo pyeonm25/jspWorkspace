@@ -47,6 +47,7 @@ checkIdButton.addEventListener('click', async () => {
         }
 
         const result = await response.text();
+		
         handleIdValidationResult(result);
     } catch (error) {
         console.error('ID validation error:', error);
