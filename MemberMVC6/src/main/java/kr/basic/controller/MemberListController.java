@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import kr.basic.model.MemberDAO;
+import kr.basic.model.MemberDAO2;
 import kr.basic.model.MemberVO;
 
 public class MemberListController implements Controller {
@@ -16,8 +17,9 @@ public class MemberListController implements Controller {
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		ArrayList<MemberVO> list = MemberDAO.getInstance().memberList();
+	//	ArrayList<MemberVO> list = MemberDAO.getInstance().memberList();
 
+		ArrayList<MemberVO> list = MemberDAO2.getInstance().memberList();
 		request.setAttribute("list", list);
 		HttpSession session = request.getSession();
 		if (session.getAttribute("log") != null) {

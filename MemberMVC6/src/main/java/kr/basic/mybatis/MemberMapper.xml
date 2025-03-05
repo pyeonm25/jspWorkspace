@@ -2,3 +2,11 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  
+<mapper namespace="kr.basic.mybatis.MemberMapper">
+<!--   <select id="memberList" resultType="kr.basic.model.MemberVO"> -->
+  <select id="memberList" resultType="member">
+    select * from member
+  </select>
+</mapper>
