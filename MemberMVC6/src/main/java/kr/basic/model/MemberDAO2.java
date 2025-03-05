@@ -22,12 +22,11 @@ public class MemberDAO2 {
 	static {
 
 		try {
-			String resource = "org/mybatis/example/mybatis-config.xml";
+			String resource = "kr/basic/mybatis/config.xml";
 			InputStream inputStream;
 			inputStream = Resources.getResourceAsStream(resource);
 			SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
